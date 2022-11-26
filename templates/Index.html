@@ -1,0 +1,12 @@
+    {% extends 'base.html' %}
+
+    {% block conteudo %}
+    <form action="/Index" method="post">
+        <h1>Bem vindo, "nome da pessoa"!</h1>
+        <p>Qual o formato da área desejada para o cálculo?</p>
+        <div>
+            <p>Digite o valor do terreno</p>
+            <input type="number" id="area" name="area">
+        </div>
+    </form>
+    {% endblock %}
