@@ -1313,50 +1313,103 @@
     <argument id="481" parent="165">
       <Position>1</Position>
     </argument>
-    <table id="482" parent="166" name="sqlite_master">
+    <table id="482" parent="166" name="history"/>
+    <table id="483" parent="166" name="sqlite_master">
       <System>1</System>
     </table>
-    <table id="483" parent="166" name="user"/>
-    <column id="484" parent="482" name="type">
-      <DataType>TEXT|0s</DataType>
-      <Position>1</Position>
-    </column>
-    <column id="485" parent="482" name="name">
-      <DataType>TEXT|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="486" parent="482" name="tbl_name">
-      <DataType>TEXT|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <column id="487" parent="482" name="rootpage">
-      <DataType>INT|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <column id="488" parent="482" name="sql">
-      <DataType>TEXT|0s</DataType>
-      <Position>5</Position>
-    </column>
-    <column id="489" parent="483" name="id">
+    <table id="484" parent="166" name="user"/>
+    <column id="485" parent="482" name="id">
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="490" parent="483" name="username">
+    <column id="486" parent="482" name="user_id">
       <DataType>VARCHAR(25)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="491" parent="483" name="password">
+    <column id="487" parent="482" name="xExtra">
+      <DataType>REAL|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="488" parent="482" name="yExtra">
+      <DataType>REAL|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="489" parent="482" name="areaLot">
+      <DataType>REAL|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="490" parent="482" name="areaTerrain">
+      <DataType>REAL|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="491" parent="482" name="yTerrain">
+      <DataType>REAL|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="492" parent="482" name="xTerrain">
+      <DataType>REAL|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="493" parent="482">
+      <ColNames>user_id</ColNames>
+      <RefColNames>username</RefColNames>
+      <RefTableName>user</RefTableName>
+    </foreign-key>
+    <index id="494" parent="482" name="history_user_id">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="495" parent="482">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="496" parent="483" name="type">
+      <DataType>TEXT|0s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="497" parent="483" name="name">
+      <DataType>TEXT|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="498" parent="483" name="tbl_name">
+      <DataType>TEXT|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="499" parent="483" name="rootpage">
+      <DataType>INT|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="500" parent="483" name="sql">
+      <DataType>TEXT|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="501" parent="484" name="id">
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="502" parent="484" name="username">
+      <DataType>VARCHAR(25)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="503" parent="484" name="password">
       <DataType>VARCHAR(25)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="492" parent="483" name="user_username">
+    <index id="504" parent="484" name="user_username">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="493" parent="483">
+    <key id="505" parent="484">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

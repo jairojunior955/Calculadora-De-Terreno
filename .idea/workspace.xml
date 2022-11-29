@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88eaadc2-106a-43a2-a95f-c2a31116d4a2" name="Changes" comment="Tela inicial">
-      <change afterPath="$PROJECT_DIR$/.idea/Calculadora-De-Terreno.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/722aa36f-8496-485e-8ae3-f7609f3940b4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/dd416b70-e89c-4f39-ab89-2eea92f17c47.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculadoraDeTerreno/.idea/CalculadoraDeTerreno.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CalculadoraDeTerreno/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Database/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Database/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projetoterrenos.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Cadastro.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    <list default="true" id="88eaadc2-106a-43a2-a95f-c2a31116d4a2" name="Changes" comment="Rotas Views">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd416b70-e89c-4f39-ab89-2eea92f17c47.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dd416b70-e89c-4f39-ab89-2eea92f17c47.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/packages/Database/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoterrenos.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Cadastro.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Base.html" afterDir="false" />
+    </list>
+    <list id="36cc57b4-0da5-44ea-9f4d-8bc1aeaaedf0" name="Changes by Fabricio" comment="">
+      <change beforePath="$PROJECT_DIR$/Database/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/packages/Database/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +26,8 @@
       <list>
         <option value="Flask Main" />
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -55,6 +45,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/templates/Index.html">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="88eaadc2-106a-43a2-a95f-c2a31116d4a2" />
+        <range start1="2" end1="3" start2="2" end2="5" changelist="36cc57b4-0da5-44ea-9f4d-8bc1aeaaedf0" />
+        <range start1="4" end1="6" start2="6" end2="6" changelist="88eaadc2-106a-43a2-a95f-c2a31116d4a2" />
+        <range start1="7" end1="9" start2="7" end2="9" changelist="88eaadc2-106a-43a2-a95f-c2a31116d4a2" />
+        <range start1="10" end1="10" start2="10" end2="22" changelist="36cc57b4-0da5-44ea-9f4d-8bc1aeaaedf0" />
+        <range start1="11" end1="12" start2="23" end2="24" changelist="36cc57b4-0da5-44ea-9f4d-8bc1aeaaedf0" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -64,22 +66,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "list.type.of.created.stylesheet": "CSS",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\Calculadora-De-Terreno\packages" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Calculadora-De-Terreno" type="Python.FlaskServer">
       <module name="Calculadora-De-Terreno" />
@@ -106,7 +113,9 @@
       <option name="presentableId" value="Default" />
       <updated>1669425801218</updated>
       <workItem from="1669425818265" duration="1289000" />
-      <workItem from="1669492041442" duration="12253000" />
+      <workItem from="1669492041442" duration="13109000" />
+      <workItem from="1669669181649" duration="9500000" />
+      <workItem from="1669687123625" duration="291000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1669425890498</created>
@@ -136,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669496430449</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Rotas Views">
+      <created>1669523560754</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669523560754</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,10 +172,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Tela inicial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tela inicial" />
+    <MESSAGE value="Rotas Views" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rotas Views" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Calculadora_De_Terreno$Calculadora_De_Terreno.coverage" NAME="Calculadora-De-Terreno Coverage Results" MODIFIED="1669517503984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Calculadora_De_Terreno$testdb.coverage" NAME="testdb Coverage Results" MODIFIED="1669515555790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Calculadora_De_Terreno$Calculadora_De_Terreno.coverage" NAME="Calculadora-De-Terreno Coverage Results" MODIFIED="1669687209571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Calculadora_De_Terreno$testdb.coverage" NAME="testdb Coverage Results" MODIFIED="1669671579720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

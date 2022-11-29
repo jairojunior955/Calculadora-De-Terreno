@@ -1,5 +1,11 @@
 @charset "UTF-8";
-
+*{
+    background-color: #1463F3;
+}
 p{
     color: #84A4FC;
+}
+div{
+    background-color: #CCD0D8;
+    align-content: center;
 }
