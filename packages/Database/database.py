@@ -13,17 +13,27 @@ class User(BaseModel):
     password = CharField(25, null=False)
 
 
+class History(BaseModel):
+    user = ForeignKeyField(User, to_field='username')
+    xExtra = FloatField()
+    yExtra = FloatField()
+    areaLot = FloatField()
+    areaTerrain = FloatField()
+    yTerrain = FloatField()
+    xTerrain = FloatField()
+    cost = FloatField()
+
+
 class Query:
     def create_db(self):
         try:
             User.create_table()
+            History.create_table()
         except:
             print('Erro ao criar db')
 
-    def insert_user(self, name, ps):
+    def register_user(self, name, ps):
         try:
-            name = input("nome ")
-            ps = input("password ")
             user = User.insert(username=f'{name}', password=f'{ps}').execute()
             print("Sucesso")
         except NameError:
@@ -50,3 +60,18 @@ class Query:
                 return False
         except NameError:
             print(NameError)
+
+    def log_generator(self, user, xExtra, yExtra, areaLot, areaTerrain, yTerrain, xTerrain, cost):
+        try:
+            history = History.insert(user=f'{user}',
+                                     xExtra=xExtra,
+                                     yExtra=yExtra,
+                                     areaLot=areaLot,
+                                     areaTerrain=areaTerrain,
+                                     yTerrain=yTerrain,
+                                     xTerrain=xTerrain,
+                                     cost=cost
+                                     ).execute()
+            print("Sucesso")
+        except NameError:
+            print('Erro no log', NameError)

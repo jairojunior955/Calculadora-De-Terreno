@@ -1,6 +1,7 @@
 {% extends 'Base.html' %}
 
-    {% block conteudo %}
+{% block conteudo %}
+
     <form action="/Index" method="POST">
         <div class="area-lote">
             <h1>Bem vindo, "nome da pessoa"!</h1>
@@ -8,5 +9,17 @@
             <p>Área do Lote</p>
             <input type="number" id="area-lote" name="area-lote" placeholder="Digite o valor da área do lote">
         </div>
+        <div>
+            <p>Tamanho horizontal excedente</p>
+            <input type="number" id="x-extra" name="x-extra" placeholder="Digite o valor tamanho horizontal excedente">
+        </div>
+        <div>
+            <p>Tamanho vertical excedente</p>
+            <input type="number" id="y-extra" name="y-extra" placeholder="Digite o valor tamanho vertical excedente">
+        </div>
+        <div>
+            <p>Custo por metro quadrado</p>
+            <input type="number" id="custo" name="custotra" placeholder="Digite o custo m²">
+        </div>
     </form>
-    {% endblock %}
+{% endblock %}
