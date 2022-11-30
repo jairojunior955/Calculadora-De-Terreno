@@ -4,7 +4,6 @@
 {% endblock %}
 
 {% block conteudo %}
-
     <form action="/Index" method="POST">
         <div class="area-lote">
             <h1>Bem vindo, "nome da pessoa"!</h1>
@@ -23,6 +22,9 @@
         <div>
             <p>Custo por metro quadrado</p>
             <input type="number" id="custo" name="custotra" placeholder="Digite o custo m²">
+        </div>
+        <div>
+            <button type="submit">Gerar</button>
         </div>
     </form>
 {% endblock %}
