@@ -38,7 +38,15 @@ class Query:
             print("Sucesso")
         except NameError:
             print('Erro no Insert', NameError)
-
+    def check_exists(self,name):
+        try:
+            query = User.select()
+            for user in query:
+                if user.username == name:
+                    return found
+            return False
+        except:
+            print("triste")
     def auth_user(self, name, ps):
         found = False
         try:

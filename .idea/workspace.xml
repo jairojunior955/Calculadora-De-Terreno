@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88eaadc2-106a-43a2-a95f-c2a31116d4a2" name="Changes" comment="inputs">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/722aa36f-8496-485e-8ae3-f7609f3940b4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/722aa36f-8496-485e-8ae3-f7609f3940b4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd416b70-e89c-4f39-ab89-2eea92f17c47.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dd416b70-e89c-4f39-ab89-2eea92f17c47.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="88eaadc2-106a-43a2-a95f-c2a31116d4a2" name="Changes" comment="initial request">
+      <change afterPath="$PROJECT_DIR$/templates/CadastroErro.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Resultado.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Database/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/packages/Database/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetoterrenos.db" beforeDir="false" afterPath="$PROJECT_DIR$/projetoterrenos.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Cadastro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/views.py" afterDir="false" />
     </list>
     <list id="36cc57b4-0da5-44ea-9f4d-8bc1aeaaedf0" name="Changes by Fabricio" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +26,8 @@
       <list>
         <option value="Flask Main" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -46,35 +54,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "C:/Users/Elizângela/PycharmProjects/Calculadora-De-Terreno/templates",
+    "list.type.of.created.stylesheet": "CSS",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Python"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Elizângela\PycharmProjects\Calculadora-De-Terreno\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Code\Calculadora-De-Terreno\packages" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="Calculadora-De-Terreno" type="Python.FlaskServer">
+      <option name="flaskDebug" value="true" />
       <module name="Calculadora-De-Terreno" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
       <option name="targetType" value="PATH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\Elizângela\PycharmProjects\Calculadora-De-Terreno\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -97,7 +110,9 @@
       <workItem from="1669669181649" duration="9500000" />
       <workItem from="1669687123625" duration="3767000" />
       <workItem from="1669768389049" duration="5208000" />
-      <workItem from="1669814143121" duration="329000" />
+      <workItem from="1669814143121" duration="3007000" />
+      <workItem from="1669822183739" duration="3027000" />
+      <workItem from="1669832138838" duration="10285000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1669425890498</created>
@@ -155,7 +170,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669768436969</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="initial request">
+      <created>1669814682546</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669814682546</updated>
+    </task>
+    <task id="LOCAL-00010" summary="initial request">
+      <created>1669814766539</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669814766539</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +195,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -179,11 +220,12 @@
     <MESSAGE value="inputs" />
     <MESSAGE value="style" />
     <MESSAGE value="Changes by Fabricio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by Fabricio" />
+    <MESSAGE value="initial request" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial request" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Calculadora_De_Terreno$calculo_de_terreno.coverage" NAME="calculo_de_terreno Coverage Results" MODIFIED="1669731247059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/packages/calculate_area" />
-    <SUITE FILE_PATH="coverage/Calculadora_De_Terreno$Calculadora_De_Terreno.coverage" NAME="Calculadora-De-Terreno Coverage Results" MODIFIED="1669689879834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Calculadora_De_Terreno$testdb.coverage" NAME="testdb Coverage Results" MODIFIED="1669671579720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Calculadora_De_Terreno$Calculadora_De_Terreno.coverage" NAME="Calculadora-De-Terreno Coverage Results" MODIFIED="1669842329611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
