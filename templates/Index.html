@@ -1,11 +1,14 @@
 {% extends 'Base.html' %}
+{% block title %}
+    Cálculo
+{% endblock %}
 
 {% block conteudo %}
 
     <form action="/Index" method="POST">
         <div class="area-lote">
             <h1>Bem vindo, "nome da pessoa"!</h1>
-            <p>Qual o formato da área desejada para o cálculo?</p>
+            <label>Qual o formato da área desejada para o cálculo?</label>>
             <p>Área do Lote</p>
             <input type="number" id="area-lote" name="area-lote" placeholder="Digite o valor da área do lote">
         </div>

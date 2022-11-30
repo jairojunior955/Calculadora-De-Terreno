@@ -1,14 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-    <title>Login</title>
-</head>
-<body>
+{% extends 'Base.html' %}
+{% block title %}
+    Login
+{% endblock %}
+{% block conteudo %}
     <form action="/Login" method="POST">
+        <div>
+            <label for="login">login</label>
+            <input type="text" id="login-form" name="login">
+        </div>
+        <div>
+            <label for="login">Senha</label>
+            <input type="text" id="password-form" name="password" placeholder="Insira sua senha">
+        </div>
+        <div>
+            <button type="submit">Entrar</button>
+        </div>
 
     </form>
-</body>
-</html>
+{% endblock %}
