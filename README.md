@@ -8,5 +8,5 @@
 ## Integrantes
 - Wagner Wendell Silva Ribeiro Filho 
 - Fabricio José Sousa Silva
-- Jairo César Júnior
+- Jairo Cesar Júnior
 - João Victor Fonseca dos Santos
