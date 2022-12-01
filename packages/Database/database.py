@@ -25,35 +25,34 @@ class History(BaseModel):
 
 
 class Query:
-    def create_db(self):
-        try:
-            User.create_table()
-            History.create_table()
-        except:
-            print('Erro ao criar db')
+    @staticmethod
+    def create_db():
+        User.create_table()
+        History.create_table()
 
     def register_user(self, name, ps):
         try:
-            user = User.insert(username=f'{name}', password=f'{ps}').execute()
+            User.insert(username=f'{name}', password=f'{ps}').execute()
             print("Sucesso")
         except NameError:
             print('Erro no Insert', NameError)
 
-    def check_exists(self, name):
+    @staticmethod
+    def check_exists(name):
         query = User.select()
         for user in query:
             if user.username == name:
                 return True
         return False
 
-    def auth_user(self, name, ps):
+    @staticmethod
+    def auth_user(name, ps):
         found = False
         try:
             query = User.select()
             for user in query:
                 if user.username == name:
                     print('Usuário encontrado')
-                    found = True
                     if user.password == ps:
                         print('Entrou')
                         return True
@@ -66,22 +65,32 @@ class Query:
         except NameError:
             print(NameError)
 
-    def log_generator(self, user, xExtra, yExtra, areaLot, areaTerrain, yTerrain, xTerrain, cost):
+    @staticmethod
+    def log_generator(
+            user,
+            x_extra,
+            y_extra,
+            area_lot,
+            area_terrain,
+            y_terrain,
+            x_terrain,
+            cost):
         try:
-            history = History.insert(user=f'{user}',
-                                     xExtra=xExtra,
-                                     yExtra=yExtra,
-                                     areaLot=areaLot,
-                                     areaTerrain=areaTerrain,
-                                     yTerrain=yTerrain,
-                                     xTerrain=xTerrain,
-                                     cost=cost
-                                     ).execute()
+            History.insert(user=f'{user}',
+                           xExtra=x_extra,
+                           yExtra=y_extra,
+                           areaLot=area_lot,
+                           areaTerrain=area_terrain,
+                           yTerrain=y_terrain,
+                           xTerrain=x_terrain,
+                           cost=cost
+                           ).execute()
             print("Sucesso")
         except NameError:
             print('Erro no log', NameError)
 
-    def get_log(self, user):
+    @staticmethod
+    def get_log(user):
         try:
             query = History.select().where(History.user == user).execute()
             lista = []

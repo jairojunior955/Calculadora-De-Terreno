@@ -1,21 +1,18 @@
-from flask import Flask, redirect, render_template, request, url_for, flash, session
+from flask import Flask, redirect, render_template, request, url_for, session
 # from views import views
-from packages.Database.database import Query as query, Query
+from packages.Database.database import Query
 from packages.calculate_area.calculo_de_terreno import Rectangle, Elipse
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'pppppp'
 
 
-class Login:
-    def __init__(self, login):
-        self.login = login
-
-
 @app.route('/')
 def home():
     return render_template('TelaInicial.html')
-@app.route('/cadastro',methods=['post'])
+
+
+@app.route('/cadastro', methods=['post'])
 def cadastro():
     return render_template('Cadastro.html')
 
@@ -30,7 +27,7 @@ def validate():
     if request.method == 'POST':
         login_user = request.form['login']
         password = request.form['password']
-        if query().auth_user(f'{login_user}', f'{password}'):
+        if Query().auth_user(f'{login_user}', f'{password}'):
             if login_user is not None:
                 session['login'] = login_user
                 return render_template('Index.html', login_user=login_user)
@@ -44,9 +41,9 @@ def validate():
 def register():
     login = request.form['login']
     password = request.form['password']
-    check = query().check_exists('login')
+    check = Query().check_exists('login')
     if not check:
-        query().register_user(f'{login}', f'{password}')
+        Query().register_user(f'{login}', f'{password}')
         return redirect(url_for('login'))
     else:
         return redirect(url_for('cadastro'))
@@ -79,14 +76,36 @@ def gerar():
             area = Rectangle().calculate_area_rectangle(xE, yE, arealote)
             custoTotal = round(Rectangle().calculate_cost(area[2], custo), 2)
             area = [round(i, 2) for i in area]
-            Query().log_generator(user, xE, yE, arealote, area[2], area[1], area[0], custo)
-            return render_template('Resultado.html', resposta=area, custo=custoTotal)
+            Query().log_generator(
+                user,
+                xE,
+                yE,
+                arealote,
+                area[2],
+                area[1],
+                area[0],
+                custo)
+            return render_template(
+                'Resultado.html',
+                resposta=area,
+                custo=custoTotal)
         if formato == 'ELIPSE':
             area = Elipse().calculate_area_elipse(xE, yE, arealote)
             custoTotal = round(Elipse().calculate_cost(area[2], custo), 2)
             area = [round(i, 2) for i in area]
-            Query().log_generator(user, xE, yE, arealote, area[2], area[1], area[0], custo)
-            return render_template('Resultado.html', resposta=area, custo=custoTotal)
+            Query().log_generator(
+                user,
+                xE,
+                yE,
+                arealote,
+                area[2],
+                area[1],
+                area[0],
+                custo)
+            return render_template(
+                'Resultado.html',
+                resposta=area,
+                custo=custoTotal)
     return render_template('Index.html')
 
 
