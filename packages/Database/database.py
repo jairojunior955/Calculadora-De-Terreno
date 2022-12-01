@@ -15,13 +15,13 @@ class User(BaseModel):
 
 class History(BaseModel):
     user = ForeignKeyField(User, to_field='username')
-    xExtra = FloatField()
-    yExtra = FloatField()
-    areaLot = FloatField()
-    areaTerrain = FloatField()
-    yTerrain = FloatField()
-    xTerrain = FloatField()
-    cost = FloatField()
+    xExtra = FloatField(null=False)
+    yExtra = FloatField(null=False)
+    areaLot = FloatField(null=False)
+    areaTerrain = FloatField(null=False)
+    yTerrain = FloatField(null=False)
+    xTerrain = FloatField(null=False)
+    cost = FloatField(null=False)
 
 
 class Query:
@@ -38,15 +38,17 @@ class Query:
             print("Sucesso")
         except NameError:
             print('Erro no Insert', NameError)
-    def check_exists(self,name):
+
+    def check_exists(self, name):
         try:
             query = User.select()
             for user in query:
                 if user.username == name:
-                    return found
+                    return True
             return False
         except:
             print("triste")
+
     def auth_user(self, name, ps):
         found = False
         try:
@@ -71,15 +73,21 @@ class Query:
 
     def log_generator(self, user, xExtra, yExtra, areaLot, areaTerrain, yTerrain, xTerrain, cost):
         try:
-            history = History.insert(user=f'{user}',
+            history = History.insert(user=user,
                                      xExtra=xExtra,
                                      yExtra=yExtra,
                                      areaLot=areaLot,
                                      areaTerrain=areaTerrain,
                                      yTerrain=yTerrain,
                                      xTerrain=xTerrain,
-                                     cost=cost
-                                     ).execute()
+                                     cost=cost).execute()
             print("Sucesso")
         except NameError:
             print('Erro no log', NameError)
+
+    def get_log(self, user):
+        try:
+            query = History.select().where(History.user == user).execute()
+            return query
+        except:
+            print("Sem histórico")
