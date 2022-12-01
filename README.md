@@ -5,6 +5,7 @@
 - Framework Flask
 - SQLite
 - Bootstrap
+- Sympy
 ## Integrantes
 - Wagner Wendell Silva Ribeiro Filho 
 - Fabricio José Sousa Silva
