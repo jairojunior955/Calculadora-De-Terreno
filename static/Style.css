@@ -19,3 +19,13 @@ body{
     width: 100vw;
 
 }
+.container-grid{
+    display: grid;
+}
+#home-page{
+    font-color: green;
+    background: aliceblue;
+    width: fit-content;
+    border-style: ridge;
+    border-color: slategrey;
+}

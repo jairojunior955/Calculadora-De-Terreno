@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, url_for, flash
+from flask import Flask, redirect, render_template, request, url_for, flash, session
 # from views import views
 from flask_bootstrap import Bootstrap4
 from flask_session import Session
@@ -9,9 +9,12 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '123321'
 Session(app)
 Bootstrap4(app)
+
+
 class Login:
     def __init__(self, login):
         self.login = login
+
 
 @app.route('/')
 @app.route('/cadastro')
@@ -30,7 +33,11 @@ def validate():
         login_user = request.form['login']
         password = request.form['password']
         if query().auth_user(f'{login_user}', f'{password}'):
-            return render_template('Index.html', login_user=login_user)
+            if login_user is not None:
+                session['login'] = login_user
+                return render_template('Index.html', login_user=login_user)
+            else:
+                redirect(url_for("login"))
         else:
             return redirect(url_for("login"))
 
@@ -54,7 +61,12 @@ def erro():
 
 @app.route('/index', methods=['POST', 'GET'])
 def index():
-    return render_template('Index.html')
+    if 'username' in session:
+        login_user = session['username']
+        return render_template('Index.html',login_user=login_user)
+    else:
+        return redirect(url_for('login'))
+
 
 
 @app.route('/gerar', methods=['POST', 'GET'])
@@ -76,6 +88,16 @@ def gerar():
             area = [round(i, 2) for i in area]
             return render_template('Resultado.html', resposta=area, custo=custoTotal)
     return render_template('Index.html')
+
+
+@app.route('/historico')
+def historico():
+    if 'username' in session:
+        user = session['username']
+        query.get_log(user)
+        return render_template('Historico.html')
+    else:
+        return redirect(url_for('login'))
 
 
 if __name__ == '__main__':
