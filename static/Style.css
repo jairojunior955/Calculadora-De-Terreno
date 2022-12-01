@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+p{
+    color: #84A4FC;
+}
+
+form{
+    background-color: #CCD0D8;
+    align-content: center;
+}
+body{
+    background-color: #1463F3;
+}
+.base{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+}

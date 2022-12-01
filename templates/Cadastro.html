@@ -1,0 +1,19 @@
+{% extends 'Base.html' %}
+{% block title %}
+    Cadastro
+{% endblock %}
+{% block conteudo %}
+    <form action="/register" method="POST">
+        <div>
+            <label for="login">login</label>
+            <input type="text" id="login-form" name="login">
+        </div>
+        <div>
+            <label for="password">Senha</label>
+            <input type="password" id="password-form" name="password" placeholder="Insira sua senha">
+        </div>
+        <div>
+            <button type="submit">Cadastrar</button>
+        </div>
+    </form>
+{% endblock %}

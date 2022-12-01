@@ -1,0 +1,50 @@
+{% extends 'Base.html' %}
+{% block title %}
+    Cálculo
+{% endblock %}
+
+{% block conteudo %}
+    <form action="/gerar" method="POST">
+        <div class="area-lote">
+            <h1>Bem vindo, {{ login_user }}</h1>
+            <div>
+                <label>Qual o formato da área desejada para o cálculo?</label>
+                <div>
+                    <label>Retangulo</label>
+                    <input type="radio" name="option" value="RECTANGLE">
+                </div>
+                <div>
+                    <label>Circulo</label>
+                    <input type="radio" name="option" value="CIRCLE">
+                </div>
+
+            </div>
+
+            <p>Área do Lote</p>
+            <input type="number" id="area-lote" name="area-lote" placeholder="Digite o valor da área do lote">
+        </div>
+        <div>
+            <p>Tamanho horizontal excedente</p>
+            <input type="number" id="x-extra" name="x-extra" placeholder="Digite o valor tamanho horizontal excedente">
+        </div>
+        <div>
+            <p>Tamanho vertical excedente</p>
+            <input type="number" id="y-extra" name="y-extra" placeholder="Digite o valor tamanho vertical excedente">
+        </div>
+        <div>
+            <p>Custo por metro quadrado</p>
+            <input type="number" id="custo" name="custo" placeholder="Digite o custo m²">
+        </div>
+        <div>
+            <button type="submit">Gerar</button>
+        </div>
+        <div>
+
+            <p>Seu terreno terá que ter uma dimensão {{ resposta[0] }} na horizontal</p>
+            <p>Seu terreno terá que ter uma dimensão {{ resposta[1] }} na vertical</p>
+            <p>Seu terreno terá uma áreal total de {{ resposta[2] }} m²</p>
+            <p>O preço estimado para a obra é de R${{ custo }}</p>
+        </div>
+    </form>
+
+{% endblock %}
