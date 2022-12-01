@@ -7,22 +7,24 @@ Histórico
 <div class="container-grid">
     <div>
         <nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
 
-          <form method="POST" action="/index">
-              <button class="nav-link" type="submit" >Página Inicial</button>
-          </form>
-         <a class="nav-link active" aria-current="page" href="/index">Histórico</a>
-      </div>
-    </div>
-  </div>
-</nav>
+                        <form method="POST" action="/index">
+                            <button class="nav-link" type="submit">Página Inicial</button>
+                        </form>
+                        <a class="nav-link active" aria-current="page" href="/index">Histórico</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </div>
     {% if historico is not none%}
     {% for hist in historico%}
@@ -42,6 +44,22 @@ Histórico
 
 
 </div>
+<style>
+    body, html {
+        color: antiquewhite;
+        font-size: 30px;
+        height: 100%;
+        margin: 0;
+        /* The image used */
+        background-image: linear-gradient(180deg, steelblue,slateblue, blueviolet);
+        /* Full height */
+        height: 100%;
 
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: repeat repeat;
+        background-size: cover;
+    }
+</style>
 
 {% endblock %}

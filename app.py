@@ -13,7 +13,9 @@ class Login:
 
 
 @app.route('/')
-@app.route('/cadastro')
+def home():
+    return render_template('TelaInicial.html')
+@app.route('/cadastro',methods=['post'])
 def cadastro():
     return render_template('Cadastro.html')
 

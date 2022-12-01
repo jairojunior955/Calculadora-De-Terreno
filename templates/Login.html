@@ -1,23 +1,49 @@
 {% extends 'Base.html' %}
 {% block title %}
-    Login
+Login
 {% endblock %}
 {% block conteudo %}
-    <form action="/validate" method="POST">
-        <div>
-            <h1>LOGIN</h1>
-        </div>
-        <div>
-            <label for="login">Login</label>
-            <input type="text" id="login-form" name="login">
-        </div>
-        <div>
-            <label for="password">Senha</label>
-            <input type="password" id="password-form" name="password" placeholder="Insira sua senha">
-        </div>
-        <div>
-            <button type="submit">Entrar</button>
-        </div>
+<form action="/validate" method="POST" class="container-form">
 
-    </form>
+    <div>
+        <h1>LOGIN</h1>
+    </div>
+    <div>
+        <label for="login">Login</label>
+        <input type="text" id="login-form" name="login" placeholder="Insira seu login">
+    </div>
+    <div>
+        <label for="password">Senha</label>
+        <input type="password" id="password-form" name="password" placeholder="Insira sua senha">
+    </div>
+    <div>
+        <button type="submit">Entrar</button>
+    </div>
+    <div
+            class="bg-image"
+    ></div>
+</form>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        /* The image used */
+        background-image: linear-gradient(180deg, steelblue, slateblue, blueviolet);
+
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .container-form {
+        height: 20vh;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 {% endblock %}
