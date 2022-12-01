@@ -31,6 +31,8 @@ def validate():
         password = request.form['password']
         if query().auth_user(f'{login_user}', f'{password}'):
             return render_template('Index.html', login_user=login_user)
+        else:
+            return redirect(url_for("login"))
 
 
 @app.route('/register', methods=['POST', 'GET'])

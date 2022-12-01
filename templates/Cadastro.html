@@ -1,11 +1,16 @@
 {% extends 'Base.html' %}
 {% block title %}
-    Cadastro
+Cadastro
 {% endblock %}
 {% block conteudo %}
+
+<div>
     <form action="/register" method="POST">
         <div>
-            <label for="login">login</label>
+            <h1>CADASTRE-SE</h1>
+        </div>
+        <div>
+            <label for="login">Login</label>
             <input type="text" id="login-form" name="login">
         </div>
         <div>
@@ -16,4 +21,6 @@
             <button type="submit">Cadastrar</button>
         </div>
     </form>
+</div>
+
 {% endblock %}
