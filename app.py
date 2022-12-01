@@ -3,12 +3,15 @@ from flask import Flask, redirect, render_template, request, url_for, flash
 from flask_bootstrap import Bootstrap4
 from flask_session import Session
 from packages.Database.database import Query as query
-from packages.calculate_area.calculo_de_terreno import Rectangle,Elipse
+from packages.calculate_area.calculo_de_terreno import Rectangle, Elipse
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '123321'
 Session(app)
 Bootstrap4(app)
-
+class Login:
+    def __init__(self, login):
+        self.login = login
 
 @app.route('/')
 @app.route('/cadastro')
@@ -51,6 +54,7 @@ def erro():
 def index():
     return render_template('Index.html')
 
+
 @app.route('/gerar', methods=['POST', 'GET'])
 def gerar():
     if request.method == 'POST':
@@ -60,16 +64,17 @@ def gerar():
         yE = float(request.form['y-extra'])
         custo = float(request.form['custo'])
         if formato == 'RECTANGLE':
-            area = Rectangle().calculate_area_rectangle(xE,yE,arealote)
-            custoTotal = round(Rectangle().calculate_cost(area[2],custo))
-            print(area)
-            print(custoTotal)
+            area = Rectangle().calculate_area_rectangle(xE, yE, arealote)
+            custoTotal = round(Rectangle().calculate_cost(area[2], custo), 2)
+            area = [round(i, 2) for i in area]
             return render_template('Resultado.html', resposta=area, custo=custoTotal)
         if formato == 'ELIPSE':
-            area = Elipse().calculate_area_elipse(xE,yE,arealote)
-            custoTotal = round(Elipse().calculate_cost(area[2],custo))
+            area = Elipse().calculate_area_elipse(xE, yE, arealote)
+            custoTotal = round(Elipse().calculate_cost(area[2], custo), 2)
+            area = [round(i, 2) for i in area]
             return render_template('Resultado.html', resposta=area, custo=custoTotal)
     return render_template('Index.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)

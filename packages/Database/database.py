@@ -38,7 +38,8 @@ class Query:
             print("Sucesso")
         except NameError:
             print('Erro no Insert', NameError)
-    def check_exists(self,name):
+
+    def check_exists(self, name):
         try:
             query = User.select()
             for user in query:
@@ -47,6 +48,7 @@ class Query:
             return False
         except:
             print("triste")
+
     def auth_user(self, name, ps):
         found = False
         try:
@@ -83,3 +85,18 @@ class Query:
             print("Sucesso")
         except NameError:
             print('Erro no log', NameError)
+
+    def get_log(self, user):
+        try:
+            query = History.select().where(History.user == user).execute()
+            for i in query:
+                print(i.user_id,
+                      i.xExtra,
+                      i.yExtra,
+                      i.areaLot,
+                      i.areaTerrain,
+                      i.yTerrain,
+                      i.xTerrain)
+        except NameError:
+            print(NameError)
+            print("Sem histórico")
