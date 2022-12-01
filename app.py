@@ -1,14 +1,10 @@
 from flask import Flask, redirect, render_template, request, url_for, flash, session
 # from views import views
-from flask_bootstrap import Bootstrap4
-from flask_session import Session
-from packages.Database.database import Query as query
+from packages.Database.database import Query as query, Query
 from packages.calculate_area.calculo_de_terreno import Rectangle, Elipse
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '123321'
-Session(app)
-Bootstrap4(app)
+app.config['SECRET_KEY'] = 'pppppp'
 
 
 class Login:
@@ -61,12 +57,11 @@ def erro():
 
 @app.route('/index', methods=['POST', 'GET'])
 def index():
-    if 'username' in session:
-        login_user = session['username']
-        return render_template('Index.html',login_user=login_user)
+    if 'login' in session:
+        login_user = session['login']
+        return render_template('Index.html', login_user=login_user)
     else:
         return redirect(url_for('login'))
-
 
 
 @app.route('/gerar', methods=['POST', 'GET'])
@@ -77,25 +72,30 @@ def gerar():
         xE = float(request.form['x-extra'])
         yE = float(request.form['y-extra'])
         custo = float(request.form['custo'])
+        user = session['login']
         if formato == 'RECTANGLE':
             area = Rectangle().calculate_area_rectangle(xE, yE, arealote)
             custoTotal = round(Rectangle().calculate_cost(area[2], custo), 2)
             area = [round(i, 2) for i in area]
+            Query().log_generator(user, xE, yE, arealote, area[2], area[1], area[0], custo)
             return render_template('Resultado.html', resposta=area, custo=custoTotal)
         if formato == 'ELIPSE':
             area = Elipse().calculate_area_elipse(xE, yE, arealote)
             custoTotal = round(Elipse().calculate_cost(area[2], custo), 2)
             area = [round(i, 2) for i in area]
+            Query().log_generator(user, xE, yE, arealote, area[2], area[1], area[0], custo)
             return render_template('Resultado.html', resposta=area, custo=custoTotal)
     return render_template('Index.html')
 
 
-@app.route('/historico')
+@app.route('/historico', methods=['POST'])
 def historico():
-    if 'username' in session:
-        user = session['username']
-        query.get_log(user)
-        return render_template('Historico.html')
+    print(session)
+    if 'login' in session:
+        user = session['login']
+        historico = Query().get_log(user)
+        print(historico)
+        return render_template('Historico.html', historico=historico)
     else:
         return redirect(url_for('login'))
 

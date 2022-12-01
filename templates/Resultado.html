@@ -4,6 +4,24 @@
 {% endblock %}
 
 {% block conteudo %}
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+
+          <form method="POST" action="/index">
+              <button class="nav-link" type="submit" >Página Inicial</button>
+          </form>
+         <a class="nav-link active" aria-current="page" href="/index">Histórico</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div>
     <form action="/gerar" method="POST">
         <div class="area-lote">
             <h1>Bem vindo, {{ login_user }}</h1>
@@ -46,5 +64,6 @@
             <p>O preço estimado para a obra é de R${{ custo }}</p>
         </div>
     </form>
+    </div>
 
 {% endblock %}

@@ -40,14 +40,11 @@ class Query:
             print('Erro no Insert', NameError)
 
     def check_exists(self, name):
-        try:
-            query = User.select()
-            for user in query:
-                if user.username == name:
-                    return found
-            return False
-        except:
-            print("triste")
+        query = User.select()
+        for user in query:
+            if user.username == name:
+                return True
+        return False
 
     def auth_user(self, name, ps):
         found = False
@@ -60,11 +57,9 @@ class Query:
                     if user.password == ps:
                         print('Entrou')
                         return True
-                        break
                     else:
                         print('Senha incorreta')
                         return False
-                        break
             if not found:
                 print('Usuário não encontrado')
                 return False
@@ -89,14 +84,17 @@ class Query:
     def get_log(self, user):
         try:
             query = History.select().where(History.user == user).execute()
+            lista = []
             for i in query:
-                print(i.user_id,
-                      i.xExtra,
-                      i.yExtra,
-                      i.areaLot,
-                      i.areaTerrain,
-                      i.yTerrain,
-                      i.xTerrain)
+                list = [i.user_id,
+                        i.xExtra,
+                        i.yExtra,
+                        i.areaLot,
+                        i.areaTerrain,
+                        i.yTerrain,
+                        i.xTerrain]
+                lista.append(list)
+            return lista
         except NameError:
             print(NameError)
             print("Sem histórico")

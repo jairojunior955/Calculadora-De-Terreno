@@ -5,9 +5,42 @@ Histórico
 
 {% block conteudo %}
 <div class="container-grid">
-    <nav>
-    <a href="/index">Página Inicial</a>
+    <div>
+        <nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+
+          <form method="POST" action="/index">
+              <button class="nav-link" type="submit" >Página Inicial</button>
+          </form>
+         <a class="nav-link active" aria-current="page" href="/index">Histórico</a>
+      </div>
+    </div>
+  </div>
 </nav>
+    </div>
+    {% if historico is not none%}
+    {% for hist in historico%}
+    <div>
+        <hr>
+        <p>Usuário:{{hist[0]}}</p>
+        <p>Dimensão Horizontal excedente{{hist[1]}}</p>
+        <p>Dimensão Vertical excedente{{hist[2]}}</p>
+        <p>Area Lote {{hist[3]}}</p>
+        <p>Area Terreno {{hist[4]}}</p>
+        <p>Dimensão Horizontal Terreno {{hist[5]}}</p>
+        <p>Dimensão Horizontal Terreno {{hist[6]}}</p>
+        <hr>
+        {% endfor%}
+    </div>
+    {% endif %}
+
+
 </div>
 
 
