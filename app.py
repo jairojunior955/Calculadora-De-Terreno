@@ -68,18 +68,18 @@ def gerar():
     if request.method == 'POST':
         formato = request.form['option']
         arealote = float(request.form['area-lote'])
-        xE = float(request.form['x-extra'])
-        yE = float(request.form['y-extra'])
+        x_e = float(request.form['x-extra'])
+        y_e = float(request.form['y-extra'])
         custo = float(request.form['custo'])
         user = session['login']
         if formato == 'RECTANGLE':
-            area = Rectangle().calculate_area_rectangle(xE, yE, arealote)
-            custoTotal = round(Rectangle().calculate_cost(area[2], custo), 2)
+            area = Rectangle().calculate_area_rectangle(x_e, y_e, arealote)
+            custo_total = round(Rectangle().calculate_cost(area[2], custo), 2)
             area = [round(i, 2) for i in area]
             Query().log_generator(
                 user,
-                xE,
-                yE,
+                x_e,
+                y_e,
                 arealote,
                 area[2],
                 area[1],
@@ -88,15 +88,15 @@ def gerar():
             return render_template(
                 'Resultado.html',
                 resposta=area,
-                custo=custoTotal)
+                custo=custo_total)
         if formato == 'ELIPSE':
-            area = Elipse().calculate_area_elipse(xE, yE, arealote)
-            custoTotal = round(Elipse().calculate_cost(area[2], custo), 2)
+            area = Elipse().calculate_area_elipse(x_e, y_e, arealote)
+            custo_total = round(Elipse().calculate_cost(area[2], custo), 2)
             area = [round(i, 2) for i in area]
             Query().log_generator(
                 user,
-                xE,
-                yE,
+                x_e,
+                y_e,
                 arealote,
                 area[2],
                 area[1],
@@ -105,7 +105,7 @@ def gerar():
             return render_template(
                 'Resultado.html',
                 resposta=area,
-                custo=custoTotal)
+                custo=custo_total)
     return render_template('Index.html')
 
 
